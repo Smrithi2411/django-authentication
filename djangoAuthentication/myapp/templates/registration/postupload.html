@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container  ">
+    <table class="table table-danger">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">TITLE</th>
+            <th scope="col">DESCRIPTION</th>
+            <th scope="col">DATE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>{{ img_obj.title }}</td>
+            <td>{{ img_obj.description }} </td>
+            <td> {{ img_obj.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      {% if img_obj %}
+      <h3>Your image is uploaded succesfully :{{img_obj.title}}</h3> <br>br 
+      <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
+      {% endif %}     
+
+ </div>
+<a class="btn btn-primary " type="button" href="{% url 'logout' %}">LOGOUT</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
